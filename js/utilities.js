@@ -69,13 +69,18 @@ function donationId(btnId, inputId, amountId, uiId, headingId){
         const closeModal = document.getElementById('btn-modal');
 
         modal.classList.remove('hidden');
+        const header = document.getElementById('header');
+        header.classList.remove('sticky')
+
         closeModal.addEventListener('click', function(){
             modal.classList.add('hidden');
+            header.classList.add('sticky')
         })
 
         window.addEventListener('click', function(event){
             if(event.target === modal){
                 modal.classList.add('hidden');
+                header.classList.add('sticky')
             }
         })
 
