@@ -25,10 +25,11 @@
 <body class="font-lexend w-screen flex flex-col min-h-screen">
     <!-- Header section -->
     <header>
-        <div class="navbar bg-[#F9F7F3] pb-4 pt-4 md:pb-16 md:pt-6 md:px-36">
+        <div class="navbar bg-[#F9F7F3] bg-opacity-50 pb-4 pt-4 md:pb-16 md:pt-6 md:px-36">
             <!-- Blog Button -->
             <div class="navbar-start pl-3">
-                <button id="btn-home" type="submit" class="btn bg-[#B4F461] border-none text-sm md:text-base">Home</button>
+                <button id="btn-home" type="submit"
+                    class="btn bg-[#B4F461] border-none text-sm md:text-base">Home</button>
             </div>
 
             <!-- Organization Name -->
@@ -47,35 +48,44 @@
     </header>
 
     <!-- Accordion section -->
-    <main class="mt-20 mx-7 md:mx-32 flex-grow">
-        <h1 class="text-3xl font-bold mb-8">Important FAQ</h1>
-        <div class="join join-vertical w-full">
-            <div class="collapse collapse-arrow join-item border-base-300 border">
-                <input type="radio" name="my-accordion-4" checked="checked" />
-                <div class="collapse-title text-xl font-medium">What does DOM stand for?</div>
-                <div class="collapse-content">
-                    <p class="bg-slate-50 rounded p-2">The DOM stands for Document Object Model, a programming interface for web documents.</p>
+    <main class="mt-20 mx-7 mb-10 md:mx-32 min-h-screen">
+        <div class="flex items-center relative">
+            <h1 class="text-3xl font-bold mb-8">Important FAQ</h1>
+            <img src="./assets/qa.gif" alt="" class="w-1/5 md:w-fit absolute md:-top-24 -top-10 left-56">
+        </div>
+        <div class="flex-grow">
+            <div class="join join-vertical w-full">
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" checked="checked" />
+                    <div class="collapse-title text-xl font-medium">What does DOM stand for?</div>
+                    <div class="collapse-content">
+                        <p class="bg-slate-50 rounded p-2">The DOM stands for Document Object Model, a programming
+                            interface for web documents.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="collapse collapse-arrow join-item border-base-300 border">
-                <input type="radio" name="my-accordion-4" />
-                <div class="collapse-title text-xl font-medium">What is the purpose of the DOM?</div>
-                <div class="collapse-content">
-                    <p class="bg-slate-50 rounded p-2">The DOM represents the structure of a document, allowing programs to manipulate HTML and XML content dynamically.</p>
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" />
+                    <div class="collapse-title text-xl font-medium">What is the purpose of the DOM?</div>
+                    <div class="collapse-content">
+                        <p class="bg-slate-50 rounded p-2">The DOM represents the structure of a document, allowing
+                            programs to manipulate HTML and XML content dynamically.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="collapse collapse-arrow join-item border-base-300 border">
-                <input type="radio" name="my-accordion-4" />
-                <div class="collapse-title text-xl font-medium">How can you select an element in the DOM?</div>
-                <div class="collapse-content">
-                    <p class="bg-slate-50 rounded p-2">You can use methods like getElementById, querySelector, or getElementsByClassName to select elements.</p>
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" />
+                    <div class="collapse-title text-xl font-medium">How can you select an element in the DOM?</div>
+                    <div class="collapse-content">
+                        <p class="bg-slate-50 rounded p-2">You can use methods like getElementById, querySelector, or
+                            getElementsByClassName to select elements.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="collapse collapse-arrow join-item border-base-300 border">
-                <input type="radio" name="my-accordion-4" />
-                <div class="collapse-title text-xl font-medium">What is an event in the DOM?</div>
-                <div class="collapse-content">
-                    <p class="bg-slate-50 rounded p-2">An event is an action or occurrence, such as a click or keypress, that can trigger a response in the web page.</p>
+                <div class="collapse collapse-arrow join-item border-base-300 border">
+                    <input type="radio" name="my-accordion-4" />
+                    <div class="collapse-title text-xl font-medium">What is an event in the DOM?</div>
+                    <div class="collapse-content">
+                        <p class="bg-slate-50 rounded p-2">An event is an action or occurrence, such as a click or
+                            keypress, that can trigger a response in the web page.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,7 +103,7 @@
     <script src="./js/features.js"></script>
 
     <script>
-        document.getElementById('btn-home').addEventListener("click", function(){
+        document.getElementById('btn-home').addEventListener("click", function () {
             window.location.href = './index.html';
         }) 
     </script>

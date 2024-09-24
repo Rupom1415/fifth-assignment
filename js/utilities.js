@@ -1,4 +1,4 @@
-function showSectionById (id){
+function showSectionById(id) {
     // hide both sections
     document.getElementById('donation-page').classList.add('hidden');
     document.getElementById('history-page').classList.add('hidden');
@@ -6,25 +6,25 @@ function showSectionById (id){
     document.getElementById(id).classList.remove('hidden');
 }
 
-function getInputValueById (id){
+function getInputValueById(id) {
     const textValue = document.getElementById(id).value;
     const numberValue = parseFloat(textValue);
-    return(numberValue);
+    return (numberValue);
 }
 
-function getInnerTextById (id){
-    const textValues= document.getElementById(id).innerText;
-    const numberValues= parseFloat(textValues);
-    return(numberValues);
+function getInnerTextById(id) {
+    const textValues = document.getElementById(id).innerText;
+    const numberValues = parseFloat(textValues);
+    return (numberValues);
 }
 
-function headingTextById (id){
+function headingTextById(id) {
     const textValues = document.getElementById(id).innerText;
     return (textValues);
 }
 
-function donationId(btnId, inputId, amountId, uiId, headingId){
-    document.getElementById(btnId).addEventListener('click', function(){
+function donationId(btnId, inputId, amountId, uiId, headingId) {
+    document.getElementById(btnId).addEventListener('click', function () {
 
         const donationAmount = getInputValueById(inputId);
         const totalDonation = getInnerTextById(amountId);
@@ -32,11 +32,13 @@ function donationId(btnId, inputId, amountId, uiId, headingId){
         const headingDetail = headingTextById(headingId)
 
         // input validation
-        if(isNaN(donationAmount) || donationAmount<=0){
-            alert ('Wrong Amount! Please try again.')
+        const donationAmount2 = document.getElementById(inputId).value;
+        if (isNaN(donationAmount2) || donationAmount2 <= 0 || !Number.isInteger(parseFloat(donationAmount2))) {
+            alert('Wrong Amount! Please try again.');
             document.getElementById(inputId).value = '';
             return;
         }
+
 
         // calculating new values
         const totalAmount = totalDonation + donationAmount;
@@ -72,13 +74,13 @@ function donationId(btnId, inputId, amountId, uiId, headingId){
         const header = document.getElementById('header');
         header.classList.remove('sticky')
 
-        closeModal.addEventListener('click', function(){
+        closeModal.addEventListener('click', function () {
             modal.classList.add('hidden');
             header.classList.add('sticky')
         })
 
-        window.addEventListener('click', function(event){
-            if(event.target === modal){
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
                 modal.classList.add('hidden');
                 header.classList.add('sticky')
             }
